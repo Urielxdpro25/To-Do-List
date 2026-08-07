@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+</head>
+
+<body>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #de5555;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .title {
+            text-align: center;
+            margin-top: 50px;
+            color: #282174;
+        }
+
+
+
+        .contenedor {
+            width: 400px;
+            height: 400px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+
+        .boton {
+            background-color: #282174;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 20px;
+                transition: background-color 0.3s ease, transform 0.5s ease;
+        }
+
+        .boton:hover {
+            transform: scale(1.1);
+            background-color: #147550;
+        }
+    </style>
+    <h1 class="title">To-Do List</h1>
+
+    <div class="contenedor">
+        <input type="text" id="input" placeholder="Nueva tarea"> 
+        <ul id="lista-tareas"></ul>
+        <button class="boton" id="boton">Añadir Tarea</button>
+    </div>
+
+    <script>
+        
+    </script>
+</body>
+
+</html>
