@@ -37,7 +37,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-
+            justify-content: space-between;
         }
 
         .contBotones {
@@ -68,28 +68,71 @@
             background-color: #13721d;
         }
 
-        .eliminar {
-            background-color: #b00707;
+        .li {
+            background-color: #07b01b;
+            color: #fff;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
         }
 
-        .eliminar:hover {
-            background-color: #9a0606;
+        .borar {
+            background-color: #ff0000;
+        }
+
+        .borar:hover {
+            background-color: #a80000;
+        }
+
+        #lista-tareas {
+            list-style-type: none;
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: rgb(5, 5, 5);
+            font-size: 20px;
+            background-color: #07b01b;
+            border-radius: 10px;
+
         }
     </style>
     <h1 class="title">To-Do List</h1>
 
     <div class="contenedor">
         <input type="text" id="input" placeholder="Nueva tarea">
-        <ul id="lista-tareas"></ul>
-        <div class="contBotones">
-            <button class="boton añadir" id="boton">Añadir Tarea</button>
-            <button class="boton eliminar" id="boton">Eliminar Tarea</button>
-        </div>
+        <ol id="lista-tareas">
+        </ol>
+
+        <button class="boton añadir" id="boton">Añadir Tarea</button>
+        <button class="boton borar" id="botonBorrar">Borrar Tarea</button>
+
     </div>
 
     <script>
+        document.getElementById("boton").addEventListener("click", añadirTarea);
+        const input = document.getElementById("input");
+        const listaTareas = document.getElementById("lista-tareas");
+        const checkbox = document.getElementById("checkbox");
+        const botonBorrar = document.getElementById("botonBorrar");
+        function añadirTarea() {
+            const tarea = document.createElement("li");
+            const checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            tarea.textContent = input.value;
+            tarea.appendChild(checkbox);
+            botonBorrar.addEventListener("click", function () {
+                if (checkbox.checked) {
+                    listaTareas.removeChild(tarea);
+                }
+            });
 
+            listaTareas.appendChild(tarea);
+
+            input.value = "";
+        }
     </script>
-</body>
 
 </html>
